@@ -1,0 +1,20 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jenkins
+  namespace: argocd
+  annotations:
+    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: integration
+spec:
+  destination:
+    namespace: ci-cd
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: ./14.Kubernetes-application-deployment/
+    repoURL: https://github.com/Eugene-Solovey/local-repository.git
+    targetRevision: master
+  syncPolicy:
+    automated:
+      prune: true
