@@ -12,8 +12,8 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: ./14.Kubernetes-application-deployment/
-    repoURL: https://github.com/Eugene-Solovey/local-repository.git
+    path: ./ci-cd/
+    repoURL: https://github.com/Eugene-Solovey/build-local.git
     targetRevision: master
   syncPolicy:
     automated:
